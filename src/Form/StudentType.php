@@ -12,13 +12,36 @@ class StudentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
-            ->add('phone')
-            ->add('email')
-            ->add('courseName')
-            ->add('majorName')
-            ->add('className')
-        ;
+        ->add('name', TextType::class,
+        [
+            'label' => 'Student Name',
+            'attr' => [
+                'minlength' => 3,
+                'maxlength' => 30
+            ]
+        ])
+        ->add('phone', IntegerType::class,
+        [
+            'label' => 'Phone number'
+        ])
+        ->add('email', TextType::class,
+        [
+            'label' => 'Email',
+            'minlength' => 3,
+            'maxlength' => 40
+        ])
+        ->add('date', DateType::class,
+        [
+            'label' => 'Published date',
+            'widget' => 'single_text'
+        ])
+        ->add('image' ,TextType::class,
+        [
+            'label' => 'Book image',
+            'attr' => [
+                'maxlength' => 255
+            ]
+        ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

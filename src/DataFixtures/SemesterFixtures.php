@@ -2,15 +2,20 @@
 
 namespace App\DataFixtures;
 
-use Doctrine\Bundle\FixturesBundle\Fixture;
+use App\Entity\Semester;
 use Doctrine\Persistence\ObjectManager;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 
 class SemesterFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        // $product = new Product();
-        // $manager->persist($product);
+        for ($i=1;$i<20;$i++) {
+            $semester = new Semester;
+            $semester->setName("Semester $i")
+                     ->setPeriod("4 months");
+            $manager->persist($semester);
+        }
 
         $manager->flush();
     }
