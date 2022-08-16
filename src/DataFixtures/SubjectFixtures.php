@@ -19,8 +19,6 @@ class SubjectFixtures extends Fixture
                     ->setFee(rand(200,300));
             $manager->persist($subject);
         }
-
-        $manager->flush();
         $manager->flush();
     }
 }
