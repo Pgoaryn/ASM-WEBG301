@@ -37,7 +37,7 @@ class StudentType extends AbstractType
         ])
         ->add('image' ,TextType::class,
         [
-            'label' => 'Book image',
+            'label' => 'Student image',
             'attr' => [
                 'maxlength' => 255
             ]
