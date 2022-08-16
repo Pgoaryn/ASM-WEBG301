@@ -15,10 +15,10 @@ class CourseFixtures extends Fixture
         for ($i = 1; $i <= 15; $i++) {
             $key = array_rand($names, 1);
             $course = new Course;
-            $course ->setName("Course $i")
-                    ->setInfo($names[$key] . rand(100,300))
-                    ->setAttendance((bool) rand(0, 1))
-                    ->setGrade((float) rand(0, 10));
+            $course->setName("Course $i")
+                ->setInfo($names[$key] . rand(100, 300))
+                ->setAttendance((bool) rand(0, 1))
+                ->setGrade((float) rand(0, 10));
             $manager->persist($course);
         }
         $manager->flush();
