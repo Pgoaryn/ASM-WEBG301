@@ -19,8 +19,8 @@
 		{% endblock %}
 	</head>
 	<body>
-		{% block head %}
-			<div class="container col-10 mt-3">
+		{% block header %}
+			<div class="container col-10 mt-3 ">
 				{% if is_granted('ROLE_ADMIN') %}
 					<ul class="nav justify-content-center">
 						<li class="nav-item">
@@ -101,7 +101,7 @@
 		{% endblock %}
 		{% block body %}{% endblock %}
 		{% block footer %}
-			<div class="container col-10 mt-3 text-center">
+			<div class="container col-12 mt-3  text-center">
 				<p class="alert alert-primary">
 					Nguyen Tho Khiem - Le Minh Vu - Nguyen Duy Anh
 				</p>
