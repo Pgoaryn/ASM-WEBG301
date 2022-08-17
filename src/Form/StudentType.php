@@ -30,17 +30,32 @@ class StudentType extends AbstractType
             'minlength' => 3,
             'maxlength' => 40
         ])
-        ->add('date', DateType::class,
+        ->add('major', EntityType::class,
         [
-            'label' => 'Published date',
-            'widget' => 'single_text'
+            'label' => 'Major',
+            'required' => true,
+            'class' => Major::class,
+            'choice_label' => 'name',
+            'multiple' => false,  
+            'expanded' => false
         ])
-        ->add('image' ,TextType::class,
+        ->add('classes', EntityType::class,
         [
-            'label' => 'Book image',
-            'attr' => [
-                'maxlength' => 255
-            ]
+           'label' => 'Class',
+           'required' => true,
+           'class' => Classes::class,
+            'choice_label' => 'name',
+            'multiple' => false, 
+            'expanded' => false
+        ])
+        ->add('semeseter', EntityType::class,
+        [
+            'label' => 'Semester',
+            'required' => true,
+            'class' => Semester::class,
+            'choice_label' => 'name',
+            'multiple' => false,  //nếu có thể chọn nhiều option (relationship: many)
+            'expanded' => false
         ]);
     }
 
